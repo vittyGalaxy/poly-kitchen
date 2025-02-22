@@ -31,6 +31,6 @@ public class Cook {
     }
 
     public void prepareDish(Dish dish, int time){
-        System.out.println("Sto preparando "+  dish.getName() + " e ci mettero' " + time);
+        System.out.println("Sto preparando "+  dish.getName() + " e ci mettero' " + time + " minuti");
     }
 }
