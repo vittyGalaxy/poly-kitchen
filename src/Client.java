@@ -19,5 +19,7 @@ public class Client {
         Dish pasta = new Pasta("Carbonara");
         cook.prepareDish(pasta);
         cook.prepareDish(pasta, 10);
+
+        System.out.println(cook.getName() + " He'll be the chef and has the level " + cook.getLevel() + " stars");
     }
 }

@@ -9,11 +9,11 @@ public class Pasta extends Dish {
     // Methods
     @Override
     public void prepare() {
-        System.out.println("Stiamo preparando la pasta");
+        System.out.println("We are preparing the pasta");
     }
 
     @Override
     public void prepare(int time) {
-        System.out.println("La pasta sara' pronta tra " + time + " minuti");
+        System.out.println("The pasta will be ready in " + time + " minutes");
     }
 }

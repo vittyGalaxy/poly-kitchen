@@ -22,11 +22,11 @@ public class IceCream extends Dessert {
 
     @Override
     public void prepare() {
-        System.out.println("Stiamo preparando il gelato");
+        System.out.println("We are making ice cream");
     }
 
     @Override
     public void prepare(int time) {
-        System.out.println("Il gelato sara' pronto tra " + time + " minuti");
+        System.out.println("The ice cream will be ready in " + time + " minutes");
     }
 }

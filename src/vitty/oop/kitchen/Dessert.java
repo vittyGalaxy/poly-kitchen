@@ -9,11 +9,11 @@ public class Dessert extends Dish {
     // Methods
     @Override
     public void prepare() {
-        System.out.println("Stiamo preparando il dolce");
+        System.out.println("We are preparing dessert");
     }
 
     @Override
     public void prepare(int time) {
-        System.out.println("Il dolce sara' pronto tra " + time + " minuti");
+        System.out.println("The dessert will be ready in " + time + " minutes");
     }
 }

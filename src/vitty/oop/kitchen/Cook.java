@@ -1,7 +1,7 @@
 package vitty.oop.kitchen;
 
 public class Cook {
-    private String name;
+    private final String name;
     private int level;
 
     public Cook(String name, int level) {
@@ -11,10 +11,6 @@ public class Cook {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getLevel() {
@@ -27,10 +23,10 @@ public class Cook {
 
     // Methods
     public void prepareDish(Dish dish){
-        System.out.println("Sto preparando " + dish.getName());
+        dish.prepare();
     }
 
     public void prepareDish(Dish dish, int time){
-        System.out.println("Sto preparando "+  dish.getName() + " e ci mettero' " + time + " minuti");
+        dish.prepare(time);
     }
 }

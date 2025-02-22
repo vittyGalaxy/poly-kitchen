@@ -8,11 +8,11 @@ public class Cake extends Dessert {
      // Methods
     @Override
     public void prepare() {
-        System.out.println("Stiamo preparando la torta");
+        System.out.println("We are preparing the cake");
     }
 
     @Override
     public void prepare(int time) {
-        System.out.println("La torta sara' pronta tra " + time + " minuti");
+        System.out.println("The cake will be ready in " + time + " minutes");
     }
 }
