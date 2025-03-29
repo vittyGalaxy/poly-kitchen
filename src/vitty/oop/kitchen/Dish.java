@@ -3,11 +3,12 @@ package vitty.oop.kitchen;
 public class Dish {
     protected String name;
     protected int nIngredient;
-    protected Ingredient[] ingredient = new Ingredient[nIngredient];
+    protected Ingredient[] ingredient;
 
     // Builder
     public Dish(String name) {
         this.name = name;
+        this.ingredient  = new Ingredient[nIngredient];
     }
 
     // Getter
