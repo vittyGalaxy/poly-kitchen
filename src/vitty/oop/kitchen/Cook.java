@@ -1,49 +1,48 @@
 package vitty.oop.kitchen;
 
-public class Cook extends Thread{
-    private final String name;
+public class Cook implements Runnable{
+    private final QueueDishes queueDishes;
     private int level;
-    private Kitchen_Buffer kitchen;
-    private String value;
+    private int delayMS;
+    private Dish[] dishesToBePrepared;
 
-    public Cook(String name, int level, Kitchen_Buffer kitchen, String value) {
-        this.name = name;
+    public Cook(int level, int delayMS, QueueDishes queueDishes){
         this.level = level;
-        this.kitchen = kitchen;
-        this.value = value;
+        this.delayMS = delayMS;
+        this.queueDishes = queueDishes;
     }
 
-    public String get_Name() {
-        return name;
+    public int getLevel(){
+        return this.level;
     }
 
-    public int getLevel() {
-        return level;
+    public int getDelay(){
+        return this.delayMS;
     }
 
     public void setLevel(int level) {
         this.level = level;
     }
 
+    public void setDelayMS(int delayMS){
+        this.delayMS = delayMS;
+    }
+
     // Methods
-    public void prepareDish(Dish dish){
-        dish.prepare();
+    public void prepareDishes(Dish[] dishesToBePrepared){
+        this.dishesToBePrepared = dishesToBePrepared;
     }
 
-    public void prepareDish(Dish dish, int time){
-        dish.prepare(time);
-    }
-
-    // Override
+    @Override
     public void run(){
-        while(true){
-            try{
-                kitchen.product(this.value);
-                System.out.println(this.value + " produced");
-                Thread.sleep(1000);
-            }catch (InterruptedException e){
-                break;
+        try {
+            for(Dish dish : dishesToBePrepared){
+                dish.prepare(delayMS);
+                queueDishes.addDish(dish);
+                Thread.sleep(delayMS);
             }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 }

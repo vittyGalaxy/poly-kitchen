@@ -1,18 +1,19 @@
 package vitty.oop.kitchen;
 
 public class Cake extends Dessert {
-    //Builder
+    // Builder
     public Cake(String name) {
         super(name);
     }
-     // Methods
+
+    // Methods
     @Override
     public void prepare() {
-        System.out.println("We are preparing the cake");
+        System.out.println("We are preparing " + name);
     }
 
     @Override
     public void prepare(int time) {
-        System.out.println("The cake will be ready in " + time + " minutes");
+        System.out.println(name + " will be ready in " + time + " minutes");
     }
 }

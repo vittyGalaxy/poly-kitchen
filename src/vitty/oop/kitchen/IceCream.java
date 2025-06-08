@@ -1,16 +1,17 @@
 package vitty.oop.kitchen;
 
-public class IceCream extends Dessert {
+public class IceCream extends Dessert{
     private int numFlavor;
+
     // Builder
     public IceCream(String name, int numFlavor) {
         super(name);
-        setNumFlavor(numFlavor);
+        this.numFlavor = numFlavor;
     }
-
+    
     // Getter
     public int getNumFlavor() {
-        return numFlavor;
+        return this.numFlavor;
     }
 
     // Setter
@@ -22,11 +23,11 @@ public class IceCream extends Dessert {
 
     @Override
     public void prepare() {
-        System.out.println("We are making ice cream");
+        System.out.println("We are making " + name);
     }
 
     @Override
-    public void prepare(int time) {
-        System.out.println("The ice cream will be ready in " + time + " minutes");
+    public void prepare(int time){
+        System.out.println( name + " will be ready in " + time + " minutes");
     }
 }

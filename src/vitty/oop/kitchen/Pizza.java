@@ -9,11 +9,11 @@ public class Pizza extends Dish {
     // Methods
     @Override
     public void prepare() {
-        System.out.println("We are preparing Pizza");
+        System.out.println("We are preparing " + name);
     }
-
+    
     @Override
     public void prepare(int time) {
-        System.out.println("Pizza will be ready in " + time + " minutes");
+        System.out.println(name + " will be ready in " + time + " minutes");
     }
 }
